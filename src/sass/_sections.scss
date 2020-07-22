@@ -1,0 +1,78 @@
+// Section
+.destinationsSection {
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    > div {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+// Steps section
+.stepSection {
+  position: relative;
+  margin-bottom: 150px;
+
+  .stepBloc {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-nb {
+      display: inline-block;
+      font-size: 60px;
+      height: 67px;
+      font-weight: bold;
+      color: $red-color;
+      margin-right: 7px;
+      background-color: $white-bg;
+      padding-bottom: 5px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &-steps {
+      position: relative;
+      flex-direction: column;
+      margin: 0 50px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        left: 15px;
+        top: 0;
+        width: 1px;
+        height: calc(100% - 50px);
+        background-color: $grey-color;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+
+  .footer-content {
+    background-color: $grey-color;
+    color: $white-color;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+}

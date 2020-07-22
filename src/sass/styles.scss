@@ -1,0 +1,40 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "_mixins.scss";
+
+// IMPORT FONTS
+@include font-face("SevenOneEight", "/assets/fonts/SevenOneEight-Book");
+@include font-face(
+  "SevenOneEight",
+  "/assets/fonts/SevenOneEight-ExtraBold",
+  bold
+);
+@include font-face(
+  "SevenOneEight",
+  "/assets/fonts/SevenOneEight-Light",
+  lighter
+);
+
+@import "_colors.scss";
+@import "_general.scss";
+@import "_carroussel.scss";
+@import "_sections.scss";
+@import "_btn.scss";
+
+// Filter
+.filter {
+  display: inline-flex;
+  width: 300px;
+  .input-group-text {
+    background-color: $white-color;
+    border-radius: 0;
+  }
+  .custom-select {
+    background: $white-color;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .input-group-append {
+    margin-left: 2px;
+    border-radius: 0;
+  }
+}

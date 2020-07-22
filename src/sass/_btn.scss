@@ -1,0 +1,27 @@
+.btn-primary {
+  background-color: $red-color;
+  border-color: $red-color;
+
+  &:hover {
+    background-color: $red-color;
+    border-color: $red-color;
+  }
+}
+
+.btn-animate {
+  transition: 300ms all ease-in-out;
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+.btn-sq {
+  display: flex;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
