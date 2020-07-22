@@ -5,9 +5,7 @@
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
             <img
-              [src]="
-                '../../assets/destinations/' + destinationFileName() + '.png'
-              "
+              [src]="'assets/destinations/' + destinationFileName() + '.png'"
               alt="Random first slide"
             />
           </div>
@@ -15,9 +13,7 @@
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
             <img
-              [src]="
-                '../../assets/destinations/' + destinationFileName() + '2.png'
-              "
+              [src]="'assets/destinations/' + destinationFileName() + '2.png'"
               alt="Random second slide"
             />
           </div>
@@ -25,9 +21,7 @@
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
             <img
-              [src]="
-                '../../assets/destinations/' + destinationFileName() + '3.png'
-              "
+              [src]="'assets/destinations/' + destinationFileName() + '3.png'"
               alt="Random third slide"
             />
           </div>
@@ -35,9 +29,7 @@
       </ngb-carousel>
 
       <ng-template #imageBloc>
-        <img
-          [src]="'../../assets/destinations/' + destinationFileName() + '.png'"
-        />
+        <img [src]="'assets/destinations/' + destinationFileName() + '.png'" />
       </ng-template>
     </div>
     <div class="destination__image-info">
@@ -61,7 +53,7 @@
     </div>
     <div class="destination__description-btn">
       <a href="#" class="btn btn-primary btn-sq"
-        ><img src="../../assets/next.svg" width="22" height="22"
+        ><img src="assets/next.svg" width="22" height="22"
       /></a>
     </div>
   </div>
