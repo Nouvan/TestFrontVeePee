@@ -8,7 +8,10 @@
   </div>
   <div class="row mb-3 text-center">
     <div class="col">
-      <div class="filter input-group border-0 mb-3 border-radius-0">
+      <label
+        class="filter input-group border-0 mb-3 border-radius-0"
+        for="inputGroupSelect"
+      >
         <div class="input-group-prepend border-0">
           <span class="input-group-text border-0" id="basic-addon1"
             ><img src="assets/filter.svg" width="25" height="25"
@@ -17,6 +20,7 @@
         <select
           class="custom-select border-0"
           id="inputGroupSelect"
+          #inputGroupSelect
           [(ngModel)]="search"
         >
           <option selected value="ALL">DESTINATIONS</option>
@@ -24,12 +28,7 @@
             country
           }}</option>
         </select>
-        <div class="input-group-append">
-          <label class="input-group-text border-0" for="inputGroupSelect"
-            ><img src="assets/arrow-down.svg" width="22" height="22"
-          /></label>
-        </div>
-      </div>
+      </label>
     </div>
   </div>
 </section>

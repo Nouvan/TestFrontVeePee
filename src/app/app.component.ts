@@ -1,4 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Renderer,
+} from "@angular/core";
 import * as destinations from "./destinations.json";
 import { trigger, style, animate, transition } from "@angular/animations";
 
@@ -31,8 +37,13 @@ export class AppComponent {
    */
   public countries;
 
+  /**
+   * Search select value
+   */
   public search = "ALL";
 
+  @ViewChild("inputGroupSelect", { static: true }) inputRef: ElementRef;
+  constructor(private renderer: Renderer) {}
   ngOnInit() {
     const countries = new Set();
     this.destinations.map((x) => {
@@ -40,6 +51,15 @@ export class AppComponent {
     });
 
     this.countries = [...countries].sort();
-    console.log(this.search);
+  }
+
+  onClickSelectLabel() {
+    var event = new MouseEvent("mousedown", {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    });
+    console.log(event);
+    this.inputRef.nativeElement.dispatchEvent(event);
   }
 }
