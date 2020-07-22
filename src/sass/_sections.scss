@@ -1,5 +1,35 @@
 // Section
 .destinationsSection {
+  position: relative;
+  padding-bottom: 70px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: calc(50% - 15px);
+    bottom: 25px;
+    width: 30px;
+    height: 30px;
+    background-color: $red-color;
+    z-index: 0;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    left: calc(50% - 2px);
+    top: 0;
+    width: 4px;
+    height: calc(100% - 50px);
+    background-color: $grey-color;
+    z-index: 0;
+  }
+
+  @media (max-width: 991.98px) {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
   .row {
     margin-left: -10px;
     margin-right: -10px;
@@ -7,6 +37,7 @@
     > div {
       padding-left: 10px;
       padding-right: 10px;
+      z-index: 1;
     }
   }
 }
