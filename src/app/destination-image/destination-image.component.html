@@ -1,0 +1,37 @@
+<div class="destination__image">
+  <div class="destination__image-bg">
+    <ngb-carousel *ngIf="destination?.isSlider; else imageBloc">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            [src]="'assets/destinations/' + destinationFileName() + '.png'"
+            [alt]="destination.label"
+          />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            [src]="'assets/destinations/' + destinationFileName() + '2.png'"
+            [alt]="destination.label"
+          />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img
+            [src]="'assets/destinations/' + destinationFileName() + '3.png'"
+            [alt]="destination.label"
+          />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <ng-template #imageBloc>
+      <img [src]="'assets/destinations/' + destinationFileName() + '.png'" />
+    </ng-template>
+  </div>
+  <div class="destination__image-info">
+    {{ destination.upto }}
+  </div>
+</div>

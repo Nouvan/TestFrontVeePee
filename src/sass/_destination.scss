@@ -1,0 +1,81 @@
+.destination {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: $white-color;
+  transition: 300ms all ease-in-out;
+
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &__image {
+    position: relative;
+    // ADD HOVER EFFECT
+    &-bg {
+      .picsum-img-wrapper,
+      img {
+        width: 100%;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 25%;
+        width: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0)
+        );
+      }
+    }
+    &-info {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      text-align: right;
+      padding: 10px;
+      color: $white-color;
+      font-weight: bold;
+      text-transform: uppercase;
+      z-index: 50;
+    }
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px 10px 15px;
+
+    &-txt {
+      flex-grow: 1;
+    }
+    &-btn {
+      padding: 10px;
+    }
+    &-tags {
+      .badge {
+        border-radius: 0;
+        text-transform: uppercase;
+        color: $white-color;
+        margin-right: 10px;
+        font-weight: lighter;
+        padding-bottom: 0.1em;
+
+        &:last-child {
+          margin-right: 0;
+        }
+        &.option {
+          background-color: $golden-color;
+        }
+        &.premium {
+          background-color: $black-color;
+        }
+      }
+    }
+  }
+}

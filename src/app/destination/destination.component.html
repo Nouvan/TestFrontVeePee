@@ -1,60 +1,6 @@
 <div class="destination">
-  <div class="destination__image">
-    <div class="destination__image-bg">
-      <ngb-carousel *ngIf="destination?.isSlider; else imageBloc">
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img
-              [src]="'assets/destinations/' + destinationFileName() + '.png'"
-              alt="Random first slide"
-            />
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img
-              [src]="'assets/destinations/' + destinationFileName() + '2.png'"
-              alt="Random second slide"
-            />
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img
-              [src]="'assets/destinations/' + destinationFileName() + '3.png'"
-              alt="Random third slide"
-            />
-          </div>
-        </ng-template>
-      </ngb-carousel>
-
-      <ng-template #imageBloc>
-        <img [src]="'assets/destinations/' + destinationFileName() + '.png'" />
-      </ng-template>
-    </div>
-    <div class="destination__image-info">
-      {{ destination.upto }}
-    </div>
-  </div>
-  <div class="destination__description">
-    <div class="destination__description-txt">
-      <div class="mb-2">
-        <b>{{ destination.country }} -</b> {{ destination.place }}<br />
-        <small>{{ destination.label }}</small>
-      </div>
-      <div class="destination__description-tags">
-        <span
-          *ngFor="let tag of destination.tags"
-          [ngClass]="tag.classname"
-          class="badge"
-          >{{ tag.label }}</span
-        >
-      </div>
-    </div>
-    <div class="destination__description-btn">
-      <a href="#" class="btn btn-primary btn-sq"
-        ><img src="assets/next.svg" width="22" height="22"
-      /></a>
-    </div>
-  </div>
+  <app-destination-image [destination]="destination"></app-destination-image>
+  <app-destination-description
+    [destination]="destination"
+  ></app-destination-description>
 </div>

@@ -1,36 +1,20 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  Renderer,
-} from "@angular/core";
-import * as destinations from "./destinations.json";
-import { trigger, style, animate, transition } from "@angular/animations";
+import { Component, OnInit } from "@angular/core";
+
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
-  animations: [
-    trigger("enterAnimation", [
-      transition(":enter", [
-        style({ transform: "scale(0.5)", opacity: 0 }), // initial
-        animate(
-          "1s cubic-bezier(.8, -0.6, 0.2, 1.5)",
-          style({ transform: "scale(1)", opacity: 1 })
-        ), // final
-      ]),
-    ]),
-  ],
 })
-export class AppComponent {
-  title = "TestFrontVeePee";
+export class AppComponent implements OnInit {
+  public title = "TestFrontVeePee";
+  private _destinationsJson = "./assets/destinations.json";
 
   /**
    * List of destinations
    */
-  public destinations = destinations.destinations;
+  public destinations: any = [];
 
   /**
    * List of available countries
@@ -42,24 +26,18 @@ export class AppComponent {
    */
   public search = "ALL";
 
-  @ViewChild("inputGroupSelect", { static: true }) inputRef: ElementRef;
-  constructor(private renderer: Renderer) {}
+  constructor(private _httpClient: HttpClient) {}
+
   ngOnInit() {
-    const countries = new Set();
-    this.destinations.map((x) => {
-      countries.add(x.country);
-    });
+    this._httpClient.get(this._destinationsJson).subscribe((response) => {
+      this.destinations = response;
 
-    this.countries = [...countries].sort();
-  }
+      const countries = new Set();
+      this.destinations.map((x) => {
+        countries.add(x.country);
+      });
 
-  onClickSelectLabel() {
-    var event = new MouseEvent("mousedown", {
-      view: window,
-      bubbles: true,
-      cancelable: true,
+      this.countries = [...countries].sort();
     });
-    console.log(event);
-    this.inputRef.nativeElement.dispatchEvent(event);
   }
 }

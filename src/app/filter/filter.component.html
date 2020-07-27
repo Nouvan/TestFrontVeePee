@@ -1,0 +1,27 @@
+<section class="container mt-3">
+  <div class="row mb-3 text-center">
+    <div class="col">
+      <label
+        class="filter input-group border-0 mb-3 border-radius-0"
+        for="inputGroupSelect"
+      >
+        <div class="input-group-prepend border-0">
+          <span class="input-group-text border-0" id="basic-addon1"
+            ><img src="assets/filter.svg" width="25" height="25"
+          /></span>
+        </div>
+        <select
+          class="custom-select border-0"
+          id="inputGroupSelect"
+          #inputGroupSelect
+          [(ngModel)]="value"
+        >
+          <option selected value="ALL">DESTINATIONS</option>
+          <option *ngFor="let country of countries" [value]="country">{{
+            country
+          }}</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>

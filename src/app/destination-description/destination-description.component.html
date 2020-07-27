@@ -1,0 +1,22 @@
+<div class="destination__description">
+  <div class="destination__description-txt">
+    <div class="mb-2">
+      <b>{{ destination.country }} -</b> {{ destination.place }}<br />
+      <small class="mr-2">{{ destination.label }}</small>
+      <app-stars [number]="destination.rating"></app-stars>
+    </div>
+    <div class="destination__description-tags">
+      <span
+        *ngFor="let tag of destination.tags"
+        [ngClass]="tag.classname"
+        class="badge"
+        >{{ tag.label }}</span
+      >
+    </div>
+  </div>
+  <div class="destination__description-btn">
+    <a href="#" class="btn btn-primary btn-sq"
+      ><img src="assets/next.svg" width="22" height="22"
+    /></a>
+  </div>
+</div>

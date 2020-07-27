@@ -1,0 +1,13 @@
+<section class="destinationsSection container">
+  <div class="row mb-3">
+    <ng-container *ngFor="let destination of destinations">
+      <div
+        *ngIf="search === 'ALL' || search === destination.country"
+        class="col-12 col-md-6 col-lg-6 col-xl-4 mb-3"
+        [@enterAnimation]
+      >
+        <app-destination [destination]="destination"></app-destination>
+      </div>
+    </ng-container>
+  </div>
+</section>
